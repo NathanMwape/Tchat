@@ -54,8 +54,13 @@ if (isset($_SESSION['username'])) {
                                 <div class="d-flex align-items-center">
                                     <img src="uploads/<?=$conversation['p_p']?>" class="w-10 rounded-circle">
                                     <h3 class="fs-xs m-2">
-                                        <?=$conversation['user_id ']?><br>
+                                        <?=$conversation['name']?><br>
                                     </h3>
+                                    <!-- <small>
+                                        <?php
+                                            // echo lastChat($_SESSION['user_id'],$conversation['user_id'], $conn );
+                                        ?>
+                                    </small> -->
                                 </div>
                                 <?php if(last_seen($conversation['last_seen']) == 'Active') { ?>   
                                     <div title="online">
@@ -86,7 +91,7 @@ if (isset($_SESSION['username'])) {
                     $.get("app/ajax/update_last_seen.php");
                 }
                 lastSeenUpdate();
-                setInterval(lastSeenUpdate, 1000);
+                setInterval(lastSeenUpdate, 200);
 
                 //rechercher
                 $("#searchText").on("input", function(){

@@ -131,7 +131,7 @@
                 }
                 lastSeenUpdate();
 
-                setInterval(lastSeenUpdate, 1000);
+                setInterval(lastSeenUpdate, 200);
 
                 // actualiser les messages automatiquement
                 let fechData = function(){
